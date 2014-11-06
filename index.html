@@ -31,13 +31,19 @@
         <meta property="og:type" content="website">
         <meta property="og:url" content="https%3A%2F%2Fmuhlenberg.github.io%2F">
     </head>
-    <body>
+    <body ng-controller="MuhlenbergCtrl">
 
         <h1>Muhlenberg College Computer Science Club</h1>
 
         <h2>Members</h2>
+        <ul>
+            <li ng-repeat="member in members"><a href="{{ member.html_url }}">{{ member.login }}</a></li>
+        </ul>
 
         <h2>Repositories</h2>
+        <ul>
+            <li ng-repeat="repo in repos"><a href="{{ repo.html_url }}">{{ repo.name }}</a></li>
+        </ul>
 
         <script type="text/javascript" src="/assets/js/jquery.min.js"></script>
         <script type="text/javascript" src="/assets/js/angular.min.js"></script>
