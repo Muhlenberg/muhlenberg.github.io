@@ -2,8 +2,6 @@
 markdown: redcarpet
 sass:
   style: :compressed
-gems:
-    - jekyll-sitemap
 
 # Metadata
 name: "Muhlenberg College Computer Science Club"
