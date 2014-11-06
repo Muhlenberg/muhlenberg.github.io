@@ -7,6 +7,7 @@
         <meta charset="UTF-8">
 
         <!-- Stylesheets -->
+        <link href="http://fonts.googleapis.com/css?family=Raleway:200" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="/assets/css/site.css">
         <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
 
@@ -31,18 +32,31 @@
         <meta property="og:type" content="website">
         <meta property="og:url" content="https%3A%2F%2Fmuhlenberg.github.io%2F">
     </head>
-    <body ng-controller="MuhlenbergCtrl">
+    <body ng-controller="MuhlenbergController">
 
         <h1>Muhlenberg College Computer Science Club</h1>
 
-        <h2>Members</h2>
-        <ul>
-            <li ng-repeat="member in members"><a href="{{ member.html_url }}">{{ member.login }}</a></li>
-        </ul>
-
         <h2>Repositories</h2>
-        <ul>
-            <li ng-repeat="repo in repos"><a href="{{ repo.html_url }}">{{ repo.name }}</a></li>
+
+        <table class="repos">
+            <tr ng-repeat="repo in repos">
+                <td class="left">
+                    <a class="name" href="{{ repo.html_url }}">{{ repo.name }}</a>
+                    <span ng-show="repo.language">({{ repo.language }})</span>
+                </td>
+                <td class="right">
+                    {{ repo.stargazers_count }} stars, {{ repo.watchers_count }} watching
+                </td>
+            </tr>
+        </table>
+
+        <hr>
+
+        <ul class="members">
+            <li class="member" ng-repeat="member in members">
+                <div class="avatar"><a href="{{ member.html_url }}"><img alt="{{ member.login }}" src="{{ member.avatar_url }}"></a></div>
+                <div class="name"><a href="{{ member.html_url }}">{{ member.name || member.login }}</a></div>
+            </li>
         </ul>
 
         <script type="text/javascript" src="/assets/js/jquery.min.js"></script>
