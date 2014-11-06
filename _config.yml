@@ -1,6 +1,5 @@
 # Config Options
 markdown: redcarpet
-pygments: true
 sass:
   style: :compressed
 gems:
