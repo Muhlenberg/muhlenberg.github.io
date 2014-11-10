@@ -1,0 +1,99 @@
+---
+---
+
+$raleway: "Raleway", sans-serif;
+$helvetica: "Helvetica", sans-serif;
+$mine-shaft: #333333;
+$gallery: #eeeeee;
+$bright-red: #aa0000;
+
+@mixin reset_padding_and_margin {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: $helvetica;
+    text-align: center;
+    background-color: $gallery;
+    color: $mine-shaft;
+}
+
+h1 {
+    font-family: $raleway;
+    font-weight: 200;
+    font-size: 40px;
+}
+
+h2 {
+    font-family: $raleway;
+    font-weight: 200;
+    font-size: 30px;
+}
+
+hr {
+    width: 400px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    height: 1px;
+    background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
+    background-image: -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
+    background-image: -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
+    background-image: -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
+}
+
+a {
+    color: $bright-red;
+    text-decoration: none;
+}
+
+.members {
+    @include reset_padding_and_margin;
+    list-style-type: none;
+
+    .member {
+        @include reset_padding_and_margin;
+
+        display: inline-block;
+        margin: 20px;
+
+        .avatar img {
+            width: 80px;
+            border: none;
+            outline: 0;
+            border-radius: 10px;
+            box-shadow: 0 0 3px $mine-shaft;
+        }
+
+        .avatar img:hover {
+            opacity: 0.85;
+        }
+
+        .name {
+            font-size: 18px;
+        }
+    }
+}
+
+.repos {
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+
+    td {
+        padding: 10px;
+    }
+
+    td.left {
+        text-align: left;
+    }
+
+    td.right {
+        text-align: right;
+    }
+
+    .name {
+        font-size: 22px;
+    }
+}
