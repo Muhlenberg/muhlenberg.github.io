@@ -1,0 +1,8 @@
+{
+  "name": "Muhlenberg Computer Science Club",
+  "description": "A Ruby on Rails app",
+  "image": "heroku/ruby",
+  "repository": "https://github.com/Muhlenberg/muhlenberg.github.io",
+  "keywords": ["ruby", "rails", "Muhlenberg", "Computer Science Club" ],
+  "addons": [ "heroku-postgresql" ]
+}
