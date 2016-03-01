@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Member.create(:name 'Jalal Khan', :role 'President', 'A brilliant programmer')
+# Member.create(name: 'Casie Ropski', role: 'Secretary', 'A secretary')
+# Member.create(name: 'Michael Borowsky', role: 'Member', 'A member')

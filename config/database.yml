@@ -83,3 +83,6 @@ production:
   database: site
   username: <%= ENV['DATABASE_USER'] %>
   password: <%= ENV['DATABASE_PASSWORD'] %>
+  database: default
+  username: <%= ENV['DATABASE_DEFAULT_USER'] %>
+  password: <%= ENV['DATABASE_DEFAULT_PASSWORD'] %>
