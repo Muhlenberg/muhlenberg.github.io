@@ -1,7 +1,6 @@
-<<<<<<< HEAD
 # Muhlenberg Computer Science Club
 Developmental site using Ruby on Rails and other web technologies
-=======
+
 # ruby-getting-started
 
 A barebones Rails app, which can easily be deployed to Heroku.
