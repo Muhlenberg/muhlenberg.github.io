@@ -1,17 +1,21 @@
 <body>
-<body class = "light-green darken-2">
-  <% @members.each do |t| %>
-	 <div class="container">
-	 <div class="col s12 m6">
-    	 <div class="card indigo darken-4">
-          	<div class="card-content white-text">
-      	 		  <h5 class="center-align"> <%= t.name %> </h5>
-      	 		  <p class="center-align"> <%= t.role %> </p>
-      	 		  <p class="center-align"> <%= t.description %> </p>      	
-              </div>
+  <body class = "red darken-2">
+    <div class="container">
+      <% @members.in_groups_of(2, false).each do |row| %>
+      <div class="row">
+        <% row.each do |t| %>
+        <div class="col s6 m6">
+          <div class="card indigo darken-4">
+           <div class="card-content white-text">
+            <h5 class="center-align"> <%= t.name %> </h5>
+            <p class="center-align"> <%= t.role %> </p>
+            <p class="center-align"> <%= t.description %> </p>      	
           </div>
-     </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <% end %>
   </div>
-  <% end %>
 </body>
 

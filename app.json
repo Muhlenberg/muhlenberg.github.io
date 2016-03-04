@@ -1,16 +1,8 @@
 {
-<<<<<<< HEAD
   "name": "Muhlenberg Computer Science Club",
   "description": "A Ruby on Rails app",
   "image": "heroku/ruby",
   "repository": "https://github.com/Muhlenberg/muhlenberg.github.io",
   "keywords": ["ruby", "rails", "Muhlenberg", "Computer Science Club" ],
-=======
-  "name": "Heroku Rails sample app",
-  "description": "A barebones Rails app, which can easily be deployed to Heroku",
-  "image": "heroku/ruby",
-  "repository": "https://github.com/heroku/ruby-getting-started",
-  "keywords": ["ruby", "rails" ],
->>>>>>> eb1e8d9b0e772c2956d473c9dc6c4f9d11c8f213
   "addons": [ "heroku-postgresql" ]
 }

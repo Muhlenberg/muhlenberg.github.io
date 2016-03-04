@@ -14,3 +14,13 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require materialize-sprockets
+
+// no wonder people hate javascript
+var ready;
+ready = function() {
+	$(".button-collapse").sideNav();
+};
+
+$(document).ready(ready)
+$(document).on('page:load', ready)
