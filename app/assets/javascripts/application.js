@@ -16,10 +16,12 @@
 //= require_tree .
 //= require materialize-sprockets
 
+
 // no wonder people hate javascript
 var ready;
 ready = function() {
 	$(".button-collapse").sideNav();
+	$(".parallax").parallax();	
 };
 
 $(document).ready(ready)
