@@ -1,0 +1,12 @@
+// Place all the styles related to the Session controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+p {
+	color: #000;
+}
+
+.checked-box[type="checkbox"].filled-in:checked + label:after {
+     background-color: $primary-color;
+     color: $primary-color;
+}

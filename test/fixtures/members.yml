@@ -1,0 +1,4 @@
+jalal:
+  name: "Jalal Khan"
+  email: "jk249997@muhlenberg.edu"
+  password_digest: <%= Member.digest('password') %>

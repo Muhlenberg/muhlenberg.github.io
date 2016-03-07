@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .
 //= require materialize-sprockets
 
@@ -20,9 +19,15 @@
 // no wonder people hate javascript
 var ready;
 ready = function() {
+	// hamburger menu
 	$(".button-collapse").sideNav();
-	$(".parallax").parallax();	
+
+	// parallax effect on welcome page
+	$(".parallax").parallax();
+
+	$('.dropdown-button').dropdown();
+
 };
 
-$(document).ready(ready)
-$(document).on('page:load', ready)
+$(document).ready(ready);
+$(document).on('page:change', ready);

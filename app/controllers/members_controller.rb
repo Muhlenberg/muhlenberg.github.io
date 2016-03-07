@@ -8,12 +8,12 @@ class MembersController < ApplicationController
 	def create
 		@member = Member.new(member_params)
 		if(@member.save)
+			log_in @member
 			redirect_to @member
 		else
 			render 'new'
 		end
 	end
-
 	private
 
 		def member_params

@@ -2,32 +2,41 @@
 <html>
 <head>
   <title>Comp Sci</title>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= stylesheet_link_tag  '//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css' %>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag  '//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js' %>
+  <%= javascript_include_tag 'application' %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= csrf_meta_tags %>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
+  <ul id='dropdown1' class='dropdown-content'>
+    <% if logged_in? %>
+    <li><%= link_to "Profile", current_member%></li>
+    <li><%= link_to "Settings", '#'%></li>
+    <li><%= link_to "Logout", logout_path, method: "delete"%></li>
+    <% else %>
+    <li><%= link_to "Login", login_path %></li>
+    <% end %>
+  </ul>
+
   <nav>
     <div class="nav-wrapper">
       <a href="/" class="brand-logo left">Logo</a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="/members/"><i class="material-icons">perm_identity</i></a></li>
-        <li><a href="/showcase"><i class="material-icons">web</i></a></li>
-        <li><a href="/calendar"><i class="material-icons">today</i></a></li>
+        <li><a href="/members/">Members</a></li>
+        <li><a href="/showcase">Showcase</a></li>
+        <li><a href="/calendar">Calendar</a></li>
+        <li><a class="dropdown-button" href="#" data-activates="dropdown1">Account<i class="material-icons right">arrow_drop_down</i></a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
-        <li class="center"><a href="/members/"><i class="material-icons">perm_identity</i></a></li>
-        <li class="center"><a href="/showcase"><i class="material-icons">web</i></a></li>
-        <li class="center"><a href="/calendar"><i class="material-icons">today</i></a></li>
+        <li class="center"><a href="/members/">Members</a></li>
+        <li class="center"><a href="/showcase">Showcase</a></li>
+        <li class="center"><a href="/calendar">Calendar</a></li>
       </ul>
     </div>
   </nav>
   
-<%= yield %>
+  <%= yield %>
 
 </body>
 </html>

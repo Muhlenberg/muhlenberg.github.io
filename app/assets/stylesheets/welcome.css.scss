@@ -2,16 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-nav {
-	background-color: color("blue", "lighten-2");
-}
-
 .homepage_img {	
 	display: block;
 	width: 100%;
 	min-width: 100%;
 	height: auto;
-	z-index: -1;
 }
 
 #homepage_img_wrapper {
@@ -19,7 +14,6 @@ nav {
 	height: 500px;
 	background-position: top center;
 	background-repeat: no-repeat;	
-	overflow: hidden;
 }
 
 .parallax-container {
@@ -27,6 +21,7 @@ nav {
 	position: absolute;
 	width: 100%;
 	margin-left: -1px;
+	margin-top: 50px;
 }
 
 .intro {
