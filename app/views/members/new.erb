@@ -1,0 +1,33 @@
+<body>
+  <div class="container">
+    <%= form_for(@member) do |f| %>
+    <%= render 'shared/error_messages' %>
+
+    <div class="row"><div class="input-field col s12">
+        <%= f.label :name, class: "active" %>
+        <%= f.text_field :name, class: "validate" %>
+    </div></div>
+
+    <div class="row"><div class="input-field col s12">
+        <%= f.label :email, class: "active" %>
+        <%= f.text_field :email, class: "validate" %>
+    </div></div>
+
+    <div class="row"><div class="input-field col s12">
+        <%= f.label :password, class: "active" %>
+        <%= f.password_field :password, class: "validate" %>
+    </div></div>
+
+    <div class="row"><div class="input-field col s12">
+        <%= f.label :password_confirmation, class: "active" %>
+        <%= f.password_field :password_confirmation, class: "validate password" %>
+    </div></div>
+
+    <div class="row"><div class="input-field col s12">
+        <%= f.submit "Submit", class: "btn col s12" %>
+    </div></div>
+
+
+    <% end %>
+  </div>
+</body>
