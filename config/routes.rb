@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'password_resets/new'
+
+  get 'password_resets/edit'
+
   get 'session/new'
 
   resources :widgets
@@ -16,7 +20,8 @@ Rails.application.routes.draw do
   
   get 'signup' => 'members#new'
   resources :members 
-
+  resources :account_activation, only: [:edit]
+  resources :password_resets, only: [:new, :create, :edit, :update]
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

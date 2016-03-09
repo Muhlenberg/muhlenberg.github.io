@@ -6,10 +6,10 @@ class MemberTest < ActiveSupport::TestCase
   # end
 
   def setup
-  	@member = Member.new(name: "test", email: "test@test.com", password: "foobar", password_confirmation: "foobar")
+  	@member = Member.new(name: "example", email: "example@test.com", password: "foobar", password_confirmation: "foobar")
   end
 
-  test "test_setup" do
+  test "valid_member" do
   	assert @member.valid?
   end
 
@@ -60,5 +60,9 @@ class MemberTest < ActiveSupport::TestCase
   test "password_length" do
   	@member.password = @member.password_confirmation = "a" * 5
   	assert_not @member.valid?
+  end
+
+  test "authenticated? should return false for a member with nil digest" do
+    assert_not @member.authenticated?(:remember, '')
   end
 end

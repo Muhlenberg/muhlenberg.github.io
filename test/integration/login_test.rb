@@ -36,7 +36,7 @@ class LoginTest < ActionDispatch::IntegrationTest
   end
 
   test "nil_member_authentication" do
-    assert_not @member.authenticated?('')
+    assert_not @member.authenticated?('remember', '')
   end
 
   test "login_remember" do

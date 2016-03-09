@@ -2,3 +2,22 @@ jalal:
   name: "Jalal Khan"
   email: "jk249997@muhlenberg.edu"
   password_digest: <%= Member.digest('password') %>
+  admin: true
+  activated: true
+  activated_at: <%= Time.zone.now %>
+
+test:
+  name: "Test User"
+  email: "test@example.com"
+  password_digest: <%= Member.digest('password') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
+
+<% 30.times do |n| %>
+member_<%= n %>:
+  name:  <%= "Member #{n}" %>
+  email: <%= "member-#{n}@example.com" %>
+  password_digest: <%= Member.digest('password') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
+<% end %>

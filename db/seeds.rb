@@ -6,6 +6,22 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Member.create(:name 'Jalal Khan', :role 'President', 'A brilliant programmer')
-# Member.create(name: 'Casie Ropski', role: 'Secretary', 'A secretary')
-# Member.create(name: 'Michael Borowsky', role: 'Member', 'A member')
+Member.create!(name:  "Example User",
+             email: "example12@test12.com",
+             password:              "foobar",
+             password_confirmation: "foobar",
+             admin: true,
+             activated: true,
+             activated_at: Time.zone.now)
+
+99.times do |n|
+  name  = Faker::Name.name
+  email = "example-#{n+1}@test.com"
+  password = "password"
+  Member.create!(name:  name,
+               email: email,
+               password:              password,
+               password_confirmation: password,
+               activated: true,
+               activated_at: Time.zone.now)
+end

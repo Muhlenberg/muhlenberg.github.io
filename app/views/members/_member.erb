@@ -1,0 +1,20 @@
+<div class="col s12 m6">
+	<div class="card small">
+		<div class="card-image waves-effect waves-block waves-light">
+			<%= image_tag("logo.jpg", class: "activator") %>
+		</div>
+		<div class="card-content">
+			<span class="card-title activator grey-text text-darken-4"><%= member.name %></span>
+			<%= link_to "Profile", member, method: :get %>
+			<% if current_member.admin? && !current_member?(member) %>
+			<%= link_to "delete", member, method: :delete, 
+			data: {confirm: "Are you sure you would like to delete this user?"} %> 
+			<% end %>
+		</div>
+		<div class="card-reveal">
+			<span class="card-title grey-text text-darken-4"><%= member.name %><i class="material-icons right">close</i></span>
+			<p>Member bio</p>
+
+		</div>
+	</div>
+</div>

@@ -10,7 +10,7 @@ module SessionHelper
 			@current_member ||= Member.find_by(id: member_id)
 		elsif (member_id = cookies.signed[:member_id])
 			member = Member.find_by(id: member_id)
-			if member && member.authenticated?(cookies[:remember_token])
+			if member && member.authenticated?(:remember, cookies[:remember_token])
 				log_in member
 				@current_member = member
 			end
@@ -38,5 +38,18 @@ module SessionHelper
 		member.forget
 		cookies.delete(:member_id)
 		cookies.delete(:remember_token)
+	end
+
+	def redirect_back_or(default)
+		redirect_to(session[:forwarding_url] || default)
+		session.delete(:forwarding_url)
+	end
+
+	def store_location
+		session[:forwarding_url] = request.url if request.get?
+	end
+
+	def current_member?(member)
+		member == current_member
 	end
 end
