@@ -10,7 +10,6 @@
 <body>
   <ul id='dropdown1' class='dropdown-content'>
     <% if logged_in? %>
-    <li><%= link_to "All Members", members_path%></li>
     <li><%= link_to "Profile", current_member%></li>
     <li><%= link_to "Settings", edit_member_path(current_member)%></li>
     <li><%= link_to "Logout", logout_path, method: "delete"%></li>

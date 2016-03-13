@@ -1,13 +1,16 @@
-<div class="col s12 m6">
-	<div class="card small">
-		<div class="card-image waves-effect waves-block waves-light">
+<div class="col s6">
+	<div class="card large">
+		<div class="card-image waves-effect waves-block">
 			<%= image_tag(member.picture? ? member.picture.url : "logo.jpg", class: "activator") %>
 		</div>
 		<div class="card-content">
 			<span class="card-title activator grey-text text-darken-4"><%= member.name %></span>
-			<%= link_to "Profile", member, method: :get %>
-			<% if current_member.admin? && !current_member?(member) %>
-			<%= link_to "delete", member, method: :delete, 
+			<%= link_to(member) do %>
+			<span><i class="material-icons medium">perm_identity</i></span>
+			<% end %>
+
+			<% if current_member.present? && current_member.admin? && !current_member?(member) %>
+			<%= link_to "Delete", member, method: :delete, class: "delete-user right",
 			data: {confirm: "Are you sure you would like to delete this user?"} %> 
 			<% end %>
 		</div>

@@ -8,8 +8,8 @@
 		<% @members.in_groups_of(2).each do |row| %>
 		<div class="row">
 			<% row.each do |member| %>
-			<%= render @members %>
-			<%end%>
+				<%= render @members %>
+			<% end %>
 		</div>
 		<% end %>
 
