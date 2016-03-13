@@ -22,3 +22,6 @@
 
 # Ignore ruby-version
 /.ruby-version
+
+# Ignore test uploads
+/public/uploads

@@ -1,1 +1,5 @@
-<%= @member.name %> <%= @member.email %>
+<body>
+	<h5><%= @member.name %></h5>
+
+	<%= image_tag @member.picture.url if @member.picture? %>
+</body>

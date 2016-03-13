@@ -1,4 +1,5 @@
 class Member < ActiveRecord::Base
+	mount_uploader :picture, PictureUploader
 	attr_accessor :remember_token, :activation_token, :reset_token
 	before_save :downcase_email
 	before_create :create_activation_digest
@@ -9,6 +10,7 @@ class Member < ActiveRecord::Base
 	format: { with: VALID_EMAIL_REGEX }, uniqueness: {case_sensitive: false}
 	has_secure_password
 	validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
+	validate :picture_size
 
 	# use short bcrypt for testing, normal for production
 	def Member.digest(string)
@@ -68,5 +70,11 @@ class Member < ActiveRecord::Base
 	def create_activation_digest
 		self.activation_token = Member.new_token
 		self.activation_digest = Member.digest(activation_token)
+	end
+
+	def picture_size
+		if picture.size > 5.megabytes
+			errors.add(:picture, "Image exceeded capacity")
+		end
 	end
 end
