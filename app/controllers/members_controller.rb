@@ -4,7 +4,7 @@ class MembersController < ApplicationController
 	before_action :admin_member,	 only: :destroy
 
 	def index
-		@members = Member.paginate(page: params[:page])
+		@members = Member.all
 	end
 
 	def show

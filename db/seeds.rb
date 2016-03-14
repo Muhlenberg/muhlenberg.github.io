@@ -6,22 +6,31 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Member.create!(name:  "Jalal Khan",
-             email: "jk249997@muhlenberg.edu",
-             password:              "inlecnaz",
-             password_confirmation: "inlecnaz",
-             admin: true,
-             activated: true,
-             activated_at: Time.zone.now)
+Member.create!(
+  name:  "Jalal Khan",
+  email: "jk249997@muhlenberg.edu",
+  password:              "inlecnaz",
+  password_confirmation: "inlecnaz",
+  admin: true,
+  activated: true,
+  activated_at: Time.zone.now)
 
-99.times do |n|
-  name  = Faker::Name.name
-  email = "example-#{n+1}@test.com"
-  password = "password"
-  Member.create!(name:  name,
-               email: email,
-               password:              password,
-               password_confirmation: password,
-               activated: true,
-               activated_at: Time.zone.now)
-end
+
+Event.create(
+  name: "Test Event",
+  desc: "This is a test.",
+  start_time: Time.zone.now,
+  end_time: Time.zone.now)
+
+# 99.times do |n|
+#   name  = Faker::Name.name
+#   email = "example-#{n+1}@test.com"
+#   password = "password"
+#   Member.create!(name:  name,
+#                email: email,
+#                password:              password,
+#                password_confirmation: password,
+#                activated: true,
+#                activated_at: Time.zone.now)
+# 
+# end

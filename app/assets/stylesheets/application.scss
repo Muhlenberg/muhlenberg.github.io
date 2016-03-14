@@ -5,6 +5,8 @@ $state-danger-text: color("red", "lighten-2");
 @import "welcome";
 @import "members";
 @import "session";
+@import "simple_calendar";
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -19,4 +21,5 @@ $state-danger-text: color("red", "lighten-2");
  *
  *= require_tree .
  *= require_self
+ *= require simple_calendar
  */
